@@ -14,6 +14,7 @@ function nomValidation() {
     document.getElementById("Nom").style.borderColor = "#FF0000";
     document.getElementById("nomerror").style.visibility= "visible";
     arr.push(1)
+    return false
   }
 }
 
@@ -31,6 +32,7 @@ function prenomValidation() {
     document.getElementById("Prénom").style.borderColor = "#FF0000";
     document.getElementById("prenomerror").style.visibility= "visible";
     arr.push(2)
+    return false
   }
 }
 
@@ -48,6 +50,7 @@ function focusEmailValidation() {
     document.getElementById("Email").style.borderColor = "#FF0000";
     document.getElementById("emailerror").style.visibility= "visible";
     arr.push(3)
+    return false
   }
 }
 
@@ -64,14 +67,20 @@ function focusPhoneValidation() {
 } else {
   document.getElementById("Télephone").style.borderColor = "#FF0000";
   document.getElementById("teleerror").style.visibility= "visible";
-  arr.push(4)
+  arr.push(4);
+  return false
 }
+
 }
 
 
 function validationclub() {
 
   let clubValidation = document.getElementById('club').selectedOptions;
+
+  if (focusPhoneValidation == false || focusEmailValidation == false || prenomValidation == false || nomValidation == false) {
+    arr.push(7);
+  }
 
   if (clubValidation.length === 0) {
     document.getElementById("cluberror3").style.visibility= "hidden";
@@ -85,8 +94,11 @@ function validationclub() {
     document.getElementById("cluberror3").style.visibility= "hidden";
     document.getElementById("cluberror0").style.visibility= "hidden";
   }
+  
   if (arr.length === 0) {
     document.getElementById("form").submit();
     }
-
+    console.log(arr)
+arr = [];
 }
+
