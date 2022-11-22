@@ -65,3 +65,7 @@ function focusPhoneValidation() {
   red.push(false)
 }
 }
+
+function redirect() {
+  document.getElementById('')
+}
