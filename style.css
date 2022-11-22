@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.4s;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* adjusting the card that holds DIV & FORM */
+
+main {
+    width: 70%;
+    height: 85%;
+}
+
+/* LEFT SIDE: div headings - h1/h2 */
+
+#leftside {
+    float: left;
+    width: 50%;
+    height: 100%;
+    color: white;
+    background-image: url("minibackg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 3% 0 0 3%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1 {
+    margin: 20% 0 25% 0;
+    font-size: 4em;
+    letter-spacing: 0.2cm;
+}
+
+/* RIGHT SIDE: form / fieldset (all inputs & labels & select) */
+
+#rightside {
+    float: right;
+    background-color: #4394d6e8;
+    width: 50%;
+    height: 100%;
+    border-radius: 0 3% 3% 0;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+form {
+    height: 100%;
+    padding: 1% 0;
+}
+.labels {
+    padding: 5px 0;
+}
+.inputs {
+    padding-left: 5px;
+    height: 35px;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+fieldset, select {
+    border: none;
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+legend {
+    padding: 5px 0;
+}
+.inputs, .labels, #submit, p, .fas {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+/* Button & button hover */
+
+#submit {
+    width: 40%;
+    height: 7%;
+    background-color: rgb(59, 59, 232);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit:hover {
+    background-color: rgb(0, 0, 227);
+}
+
+  /* icon */
+
+.fas {
+    color: rgb(177, 7, 7);
+    font-size: 10px;
+    margin-top: 5px;
+    letter-spacing: 2px;
+    visibility: hidden;
+}
+
+/* Responsive Design */
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 0.6em;
+    }
+    .labels {
+        padding: 3px 0;
+        font-size: 0.2em,
+    }
+    .inputs {
+        padding-left: 5px;
+        height: 30px;
+        border: 1px solid grey;
+        border-radius: 3px;
+    }
+}
