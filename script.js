@@ -1,5 +1,7 @@
 // nom validation
 
+let arr = [];
+
 function nomValidation() {
 
   let nom = document.getElementById("Nom").value;
@@ -11,7 +13,7 @@ function nomValidation() {
   } else {
     document.getElementById("Nom").style.borderColor = "#FF0000";
     document.getElementById("nomerror").style.visibility= "visible";
-    red.push(false)
+    arr.push(1)
   }
 }
 
@@ -28,7 +30,7 @@ function prenomValidation() {
   } else {
     document.getElementById("Prénom").style.borderColor = "#FF0000";
     document.getElementById("prenomerror").style.visibility= "visible";
-    red.push(false)
+    arr.push(2)
   }
 }
 
@@ -45,7 +47,7 @@ function focusEmailValidation() {
   } else {
     document.getElementById("Email").style.borderColor = "#FF0000";
     document.getElementById("emailerror").style.visibility= "visible";
-    red.push(false)
+    arr.push(3)
   }
 }
 
@@ -62,10 +64,29 @@ function focusPhoneValidation() {
 } else {
   document.getElementById("Télephone").style.borderColor = "#FF0000";
   document.getElementById("teleerror").style.visibility= "visible";
-  red.push(false)
+  arr.push(4)
 }
 }
 
-function redirect() {
-  document.getElementById('')
+
+function validationclub() {
+
+  let clubValidation = document.getElementById('club').selectedOptions;
+
+  if (clubValidation.length === 0) {
+    document.getElementById("cluberror3").style.visibility= "hidden";
+    document.getElementById("cluberror0").style.visibility= "visible";
+    arr.push(5)
+  } else if (clubValidation.length > 3) {
+    document.getElementById("cluberror3").style.visibility= "visible";
+    document.getElementById("cluberror0").style.visibility= "hidden";
+    arr.push(6)
+  } else {
+    document.getElementById("cluberror3").style.visibility= "hidden";
+    document.getElementById("cluberror0").style.visibility= "hidden";
+  }
+  if (arr.length === 0) {
+    document.getElementById("form").submit();
+    }
+
 }
